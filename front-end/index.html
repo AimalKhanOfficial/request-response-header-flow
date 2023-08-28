@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $.ajax({
+            url: 'http://localhost:4555/',
+            type: 'GET',
+            success: function (res, status, xhr) {
+                console.log('Data: ' + JSON.stringify(res));
+                console.log('headers: ' + xhr.getAllResponseHeaders());
+            },
+            error: function (request, error) {
+                console.log("Request: " + JSON.stringify(request));
+            }
+        });
+    </script>
+</body>
+
+</html>
